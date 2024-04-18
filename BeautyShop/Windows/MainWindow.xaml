@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BeautyShop"
         xmlns:vm="clr-namespace:BeautyShop.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="BeautyShop"
         MinHeight="600"
         Height="600"
         Width="800">
@@ -32,6 +32,9 @@
                 <Button Content="Войти"
                         Margin="0 0 15 0"
                         Command="{Binding GoSignInPageCommand}" />
+                <Button Content="О нас"
+                        Margin="0 0 15 0"
+                        Command="{Binding ShowAboutUsCommand}" />
             </StackPanel>
         </Grid>
         <Frame x:Name="AppFrame"

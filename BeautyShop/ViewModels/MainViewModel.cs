@@ -2,6 +2,7 @@
 using BeautyShop.Messages;
 using BeautyShop.Models;
 using BeautyShop.Pages;
+using BeautyShop.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -30,6 +31,12 @@ namespace BeautyShop.ViewModels
             MainFrame.Frame.Navigate(new SignInPage());
         }
 
+        [RelayCommand]
+        private void ShowAboutUs()
+        {
+            var aboutUs = new AboutUs();
+            aboutUs.ShowDialog();
+        }
         public void Receive(LoggedInClientMessage message)
         {
             Client = message.Value;
