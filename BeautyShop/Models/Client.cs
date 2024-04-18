@@ -16,7 +16,11 @@ namespace BeautyShop.Models
         public string Patronymic { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public long IsConstant { get; set; }
+        public bool IsConstant { get; set; }
+
+        public string Fullname {
+            get => $"{Surname} {Name} {Patronymic}";
+        }
 
         public virtual ICollection<Guestbook> Guestbooks { get; set; }
     }

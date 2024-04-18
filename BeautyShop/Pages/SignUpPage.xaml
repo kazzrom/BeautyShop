@@ -17,7 +17,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Width="200"
-                DataContext="{Binding Client}">
+                DataContext="{Binding RegisterClient}">
         <TextBlock Text="Регистрация"
                    Style="{StaticResource TextBlockTitleBold}"
                    Margin="0 0 0 40" />

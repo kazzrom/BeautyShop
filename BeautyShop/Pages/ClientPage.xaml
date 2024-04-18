@@ -12,6 +12,37 @@
         <vm:ClientViewModel />
     </Page.DataContext>
     <Grid>
-        <TextBlock Text="{Binding Client.Name}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock Text="Список мастеров" 
+                       Style="{StaticResource TextBlockSubTitle}"
+                       Margin="0 0 0 10"/>
+            <DataGrid ItemsSource="{Binding Employees}" 
+                      AutoGenerateColumns="False"
+                      SelectionMode="Single"
+                      SelectedItem="{Binding SelectedEmployee}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" />
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" />
+                    <DataGridTextColumn Header="Должность" Binding="{Binding Post}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Показать расписание"
+                    Command="{Binding ShowScheduleCommand}"/>
+            <DataGrid ItemsSource="{Binding EmployeeSchedules}"
+                      SelectionMode="Single"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Начало"
+                                        Binding="{Binding StartTime}" />
+                    <DataGridTextColumn Header="Конец"
+                                        Binding="{Binding EndTime}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Page>
